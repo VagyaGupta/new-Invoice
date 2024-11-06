@@ -1,0 +1,234 @@
+
+.container {
+    font-family:  sans-serif; 
+    width: 100%;
+    background-color: #f1f3f4; 
+    max-width: 800px;
+    padding: 20px;
+    // background-color: #ffffff;
+    // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 10%;
+    // border:2px solid #202124;
+  }
+  
+  
+  .newInvoice {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a73e8; 
+    margin-bottom: 30px;
+  }
+  
+  
+  form label {
+    font-size: 16px;
+    color: #202124; 
+    display: block;
+    margin-bottom: 6px;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  
+  form input[type="number"],
+  form input[type="text"],
+  form input[type="date"],
+  form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #dcdfe1; 
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline:none;
+    background-color: #f1f3f4; 
+  }
+  
+  form input[type="number"]:focus,
+  form input[type="text"]:focus,
+  form input[type="date"]:focus,
+  form select:focus {
+    border-color: #1a73e8; 
+  }
+  
+   button[type="submit"] {
+    background-color:#1a73e8; 
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    // transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  
+   button[type="submit"]:hover {
+    background-color: #1669c1; 
+  }
+  
+   input[disabled] {
+    background-color: #e8f0fe;
+    cursor: not-allowed;
+  }
+  
+  
+  
+  input.ng-invalid {
+    border-color: red;
+  }
+  
+  input.ng-valid {
+    border-color: green;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+  }
+  
+  // form .error {
+  //   color: red;
+  //   font-size: 12px;
+  //   margin-top: -12px;
+  //   margin-bottom: 20px;
+  //   text-align: left;
+  // }
+  
+  
+  
+  // .table-container {
+  //   padding: 16px;
+  // }
+  
+  // .invoice-table {
+  //   width: 50%;
+  //   border-collapse: collapse;
+  // }
+  
+  // .invoice-table th, .invoice-table td {
+  //   border: 1px solid #ddd;
+  //   padding: 8px;
+  // }
+  
+  // .invoice-table th {
+  //   background-color: #4a3ce8;
+  //   color: white;
+  //   text-align: left;
+  // }
+  
+  // .invoice-table input {
+  //   width: 50%;
+  //   padding: 4px;
+  //   margin-top: 4px;
+  //   box-sizing: border-box;
+  // }
+  
+  // .actions {
+  //   display: flex;
+  //   gap: 8px;
+  //   margin-top: 8px;
+  // }
+  
+  // button {
+  //   background-color: #4a3ce8;
+  //   color: white;
+  //   border: none;
+  //   padding: 6px 12px;
+  //   cursor: pointer;
+  //   border-radius: 4px;
+  // }
+  
+  // button:hover {
+  //   background-color: #3a2ec0;
+  // }
+  
+  .table-container {
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling for small screens */
+  }
+  
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increased padding for readability */
+    text-align: left;
+  }
+  
+  .invoice-table th {
+    background-color: #4a3ce8;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .invoice-table td {
+    font-size: 14px;
+    color: #202124;
+  }
+  
+  .invoice-table input {
+    width: 100%; 
+    padding: 8px;
+    margin-top: 4px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f1f3f4;
+    box-sizing: border-box;
+  }
+  
+  .invoice-table input:focus {
+    border-color: #1a73e8;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  button {
+    background-color: #4a3ce8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #3a2ec0;
+  }
+  
+  @media (max-width: 768px) {
+    .invoice-table {
+      width: 100%;
+      font-size: 12px; /* Smaller font size for smaller screens */
+    }
+  
+    .invoice-table th, .invoice-table td {
+      padding: 10px; /* Slightly reduced padding */
+    }
+  
+    .invoice-table input {
+      width: 100%; /* Ensure inputs are responsive */
+    }
+  }

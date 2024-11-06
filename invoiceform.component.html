@@ -1,0 +1,233 @@
+<!-- <div class="container">
+<div class="newInvoice"> New Invoice</div>
+
+<form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+
+<label>Invoice Number: </label>
+<div *ngIf="invoiceForm.controls['invoiceNumber'].touched && invoiceForm.controls['invoiceNumber'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<div *ngIf="invoiceForm.controls['invoiceNumber'].errors?.['positive']">
+  Invoice Number should be positive.
+</div>
+<input type="number" formControlName="invoiceNumber">
+
+
+<label>Invoice Date: </label>
+<div *ngIf="invoiceForm.controls['invoiceDate'].touched && invoiceForm.controls['invoiceDate'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<input type="date" formControlName="invoiceDate">
+
+
+<label>Payment Due Date: </label>
+<div *ngIf="invoiceForm.controls['paymentDueDate'].touched && invoiceForm.controls['paymentDueDate'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<input type="date" formControlName="paymentDueDate">
+
+
+<label>Reference Number: </label>
+<input type="number" formControlName="referenceNumber">
+
+
+<label >Reference Date: </label>
+<input type="date" formControlName="referenceDate">
+
+
+<label >Delivery Date: </label>
+<input type="date" formControlName="deliveryDate">
+
+
+<label>Ship To: </label>
+<div *ngIf="invoiceForm.controls['shipTo'].touched && invoiceForm.controls['shipTo'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<select formControlName="shipTo">
+    <option value=""  disabled>Select a state</option>
+    <option *ngFor="let state of stateForm" [value]="state">
+        {{state}}
+    </option>
+</select>
+
+
+<label>GST: </label>
+<div *ngIf="invoiceForm.controls['gst'].touched && invoiceForm.controls['gst'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<input type="text" formControlName="gst">
+
+
+<label>SGST: </label>
+<input type="text" formControlName="sgst">
+
+
+<label>CGST: </label>
+<input type="text" formControlName="cgst">
+
+
+<label>IGST: </label>
+<input type="text" formControlName="igst">
+
+
+<label for="">Invoice Amount: </label>
+<div *ngIf="invoiceForm.controls['invoiceAmount'].touched && invoiceForm.controls['invoiceAmount'].errors?.['required']">
+  <span>This is required</span>
+</div>
+<input type="text" formControlName="invoiceAmount">
+
+
+<button type="submit"  [disabled]="invoiceForm.invalid">Submit</button>
+<button type="button" (click)="onUpdate()"> Update</button>
+
+</form>
+
+
+<div class="table-container">
+    <table class="invoice-table" [formGroup]="itemFormGroup">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>HSN/SAC</th>
+          <th>GST (%)</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Amount</th>
+          <th>Total</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itemFormGroup">
+          <td>
+            <label >
+              <input type="text" [formControlName]="'name'" placeholder="Item Name">
+
+            </label>
+            <div class="actions">
+            </div>
+          </td>
+           <td>
+            <label>
+              <input type="text" [formControlName]="'hsn'" placeholder="HSN/SAC">
+            </label>
+          </td> 
+  
+          
+          <td>
+            <label>
+              <input type="text" [formControlName]="'gst'" placeholder="GST">
+            </label>
+          </td>
+  
+          <td>
+            <label>
+              <input type="text" [formControlName]="'quantity'" placeholder="Quantity">
+            </label>
+          </td>
+  
+          
+          <td>
+            <label>
+              <input type="text" [formControlName]="'rate'" placeholder="Rate">
+            </label>
+          </td>
+  
+          <td><label>
+            <input type="text" [formControlName]="'amount'" placeholder="Amount">
+          </label></td>
+          <td><label>
+            <input type="text" [formControlName]="'total'" placeholder="Total">
+          </label></td>
+          <!-- <td>{{ calculateTotal(item) | currency }}</td> -->
+         
+                
+        <!-- </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+ -->
+
+
+ <div class="container">
+  <h2>New Invoice</h2>
+
+  <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+    <label for="invoiceNumber">Invoice Number: </label>
+    <input type="number" formControlName="invoiceNumber">
+    <div *ngIf="invoiceForm.controls['invoiceNumber'].touched && invoiceForm.controls['invoiceNumber'].errors?.['required']">
+      <span>This is required</span>
+    </div>
+    <div *ngIf="invoiceForm.controls['invoiceNumber'].errors?.['positive']">
+      <span>Invoice Number should be positive.</span>
+    </div>
+
+    <label for="invoiceDate">Invoice Date: </label>
+    <input type="date" formControlName="invoiceDate">
+    <div *ngIf="invoiceForm.controls['invoiceDate'].errors?.['required']">
+      <span>This is required</span>
+    </div>
+
+    <label for="paymentDueDate">Payment Due Date: </label>
+    <input type="date" formControlName="paymentDueDate">
+    <div *ngIf="invoiceForm.controls['paymentDueDate'].errors?.['required']">
+      <span>This is required</span>
+    </div>
+
+    <label for="shipTo">Ship To: </label>
+    <select formControlName="shipTo">
+      <option value="" disabled>Select a state</option>
+      <option *ngFor="let state of stateForm" [value]="state">{{ state }}</option>
+    </select>
+
+    <label for="gst">GST: </label>
+    <input type="text" formControlName="gst">
+    <div *ngIf="invoiceForm.controls['gst'].errors?.['required']">
+      <span>This is required</span>
+    </div>
+
+    <!-- Add more fields like SGST, CGST, etc. -->
+
+    <div formArrayName="items">
+      <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
+        <div>
+          <label for="name">Item Name:</label>
+          <input type="text" formControlName="name">
+        </div>
+
+        <div>
+          <label for="hsn">HSN/SAC:</label>
+          <input type="text" formControlName="hsn">
+        </div>
+
+        <div>
+          <label for="gst">GST (%):</label>
+          <input type="text" formControlName="gst">
+        </div>
+
+        <div>
+          <label for="quantity">Quantity:</label>
+          <input type="text" formControlName="quantity">
+        </div>
+
+        <div>
+          <label for="rate">Rate:</label>
+          <input type="text" formControlName="rate">
+        </div>
+
+        <div>
+          <label for="amount">Amount:</label>
+          <input type="text" formControlName="amount">
+        </div>
+
+        <div>
+          <label for="total">Total:</label>
+          <input type="text" formControlName="total">
+        </div>
+      </div>
+    </div>
+
+    <button type="button" (click)="addItem()">Add Item</button>
+    <button type="submit" [disabled]="invoiceForm.invalid">Submit</button>
+  </form>
+</div>

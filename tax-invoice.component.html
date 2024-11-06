@@ -1,0 +1,114 @@
+
+<div class="taxinvoice">
+<div class="header">
+    <img src="https://static.vecteezy.com/system/resources/previews/004/697/240/original/tax-invoice-in-envelope-vector.jpg">
+    <h1>Tax Invoice</h1>
+</div>
+<div class="company-details">
+<div class="details"><strong>Company Details</strong></div>
+<div class="number"> 
+    <p>Invoice No. : <span>12345 </span></p>
+    <p>Delivery Note : <span>12345 </span></p>
+    <p>Reference No & Date : <span> 12345</span></p>
+    <p>Buyer's Order No. : <span> 12345</span></p>
+    <p>Dispatch Doc No. : <span> 12345</span></p>
+</div>
+<div class="dates">
+    <p>Dated : <span> 12345</span></p>
+    <p>Payment due date : <span> 12345</span></p>
+    <p>Other References : <span> 12345</span></p>
+    <p>Dated : <span> 12345</span></p>
+    <p>Delivery Note Date : <span> 12345</span></p>
+</div>
+</div>
+<div class="buyer-details">
+<p>Buyer (Bill to)
+    <span>Vendor Details</span>
+</p>
+ <div class="overall">
+<div class="dispatched">
+    <p>Dispatched To: <span></span></p>
+    <p>Destination: <span></span></p>
+</div>
+<div class="terms">
+    <p>Terms of Delivery: </p>
+</div>
+</div>
+</div>
+<div class="Invoicetable">
+    <table>
+        <tr>
+            <th>Sr.No.</th>
+            <th>Particulars</th>
+            <th>HSN/SAC</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>GST</th>
+            <th>Amount</th>
+        </tr>
+        <tr *ngFor="let item of invoice;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.particulars}}</td>
+            <td>{{item.hsnsac}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.rate}}</td>
+            <td>{{item.gst}}</td>
+            <td>{{item.amount}}</td>
+           
+        </tr>
+    </table>
+</div>
+<div class="amount">
+    <p>Amount Chargeable(in words)</p>
+    <p>E. and O.E</p>
+    
+</div>
+ <div class="amounttable">
+
+<table>
+    <tr>
+        <th>HSN/SAC</th>
+        <th>Taxable Value</th>
+        <th colspan="2">CGST
+        <th colspan="2">SGST/UTGST
+        <th>Total Tax Amount</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>Rate</th>
+        <th>Amount</th>
+        <th>Rate</th>
+        <th>Amount</th>
+        <th></th>
+        
+        </tr>
+        <tr *ngFor="let item of invoice">
+            
+            <td>{{item.hsnsac}}</td>
+            <td>-</td>
+            <td>9%</td>
+            <td>0</td>
+            <td>9%</td>
+            <td>0</td>
+            <td>0.00</td>
+      
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>0</th>
+        </tr>
+</table>
+</div>
+<div>
+    <p>Tax Amount (in words)</p>
+    <p>Company's PAN <span>{{companyObj.companyPAN}}</span></p>
+</div>
+
+</div>
+

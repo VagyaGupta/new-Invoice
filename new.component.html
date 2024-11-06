@@ -1,0 +1,115 @@
+<p>new works!</p>
+<div class="container">
+    <div class="newInvoice"> New Invoice</div>
+    <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+    <label>Invoice Number: </label>
+    <input type="number" formControlName="invoiceNumber">
+    <label>Invoice Date: </label>
+    <input type="date" formControlName="invoiceDate">
+    <label>Payment Due Date: </label>
+    <input type="date" formControlName="paymentDueDate">
+    <label>Reference Number: </label>
+    <input type="number" formControlName="referenceNumber">
+    <label >Reference Date: </label>
+    <input type="date" formControlName="referenceDate">
+    <label >Delivery Date: </label>
+    <input type="date" formControlName="deliveryDate">
+    <label>Ship To: </label>
+    <select formControlName="shipTo">
+        <option value=""  disabled>Select a state</option>
+        <option *ngFor="let state of stateForm" [value]="state">
+            {{state}}
+        </option>
+    </select>
+    <label>GST: </label>
+    <input type="text" formControlName="gst">
+    <label>SGST: </label>
+    <input type="text" formControlName="sgst">
+    <label>CGST: </label>
+    <input type="text" formControlName="cgst">
+    <label>IGST: </label>
+    <input type="text" formControlName="igst">
+    <label for="">Invoice Amount: </label>
+    <input type="text" formControlName="invoiceAmount">
+    
+    </form>
+    
+    
+    <div class="table-container">
+        <table class="invoice-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>HSN/SAC</th>
+              <th>GST (%)</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th>Total</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>
+                <label>
+                  Item Name
+                  <input type="text" [(ngModel)]="item.name">
+                </label>
+                <div class="actions">
+                </div>
+              </td>
+               <td>
+                <label>
+                  <input type="number" [(ngModel)]="item.hsn" placeholder="HSN/SAC">
+                </label>
+              </td> 
+      
+              
+              <td>
+                <label>
+                  <input type="number" [(ngModel)]="item.gst" placeholder="GST (%)">
+                </label>
+              </td>
+      
+              <td>
+                <label>
+                  <input type="number" [(ngModel)]="item.quantity" placeholder="Quantity">
+                </label>
+              </td>
+      
+              
+              <td>
+                <label>
+                  <input type="number" [(ngModel)]="item.rate" placeholder="Rate">
+                </label>
+              </td>
+      
+              <td><label>
+                <input type="number" [(ngModel)]="item.amount" placeholder="Amount">
+              </label></td>
+              <td><label>
+                <input type="number" [(ngModel)]="item.total" placeholder="Total">
+              </label></td>
+              <!-- <td>{{ calculateTotal(item) | currency }}</td> -->
+             
+                    
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    <button type="submit" (click)="onSubmit()"   [disabled]="invoiceForm.invalid">Submit</button>
+    <button type="submit" (click)="onUpdate()"> Update</button>
+    </div>
+    
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .taxinvoice {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ddd;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .company-details, .buyer-details {
+    margin-bottom: 20px;
+  }
+  
+  .details {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .number p, .dates p {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+  
+  .number p span, .dates p span {
+    font-weight: 600;
+  }
+  
+  .dates, .number {
+    display: inline-block;
+    width: 45%;
+  }
+  
+  .dates p, .number p {
+    font-size: 1em;
+  }
+  
+  .buyer-details p {
+    font-size: 1.1em;
+  }
+  
+  .buyer-details .overall {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-right: 30%;
+  }
+  
+  .buyer-details .dispatched p {
+    font-size: 1em;
+  }
+  
+  .buyer-details .terms p {
+    font-size: 1em;
+  }
+  
+  .Invoicetable {
+    width: 800px;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  
+  .Invoicetable th, .Invoicetable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .Invoicetable th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .Invoicetable td {
+    font-size: 1em;
+  }
+  
+  .amount {
+    margin-top: 20px;
+    font-size: 1.1em;
+  }
+  
+  .amount p {
+    margin: 10px 0;
+  }
+  
+  .amounttable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .amounttable th, .amounttable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .amounttable th {
+    // background-color: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  .amounttable td {
+    font-size: 1em;
+  }
+  
+//   .amounttable tr:last-child th {
+//     // border-bottom: 2px solid #ddd;
+//   }
+  
+//   .amounttable tr:last-child td {
+//     border-bottom: 2px solid #ddd;
+//   }
+  
+  .amounttable .total-row td {
+    font-weight: bold;
+  }
+  
+  p span {
+    font-weight: 600;
+  }
+  
+  div p {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .number, .dates {
+      width: 100%;
+      display: block;
+    }
+    .buyer-details .overall {
+      flex-direction:column;
+    }
+    .Invoicetable, .amounttable {
+      width: 100%;
+      font-size: 0.9em;
+      overflow:scroll;
+    }
+  }
+  
